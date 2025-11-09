@@ -43,7 +43,7 @@ export default function Preloader() {
 
       const sideImages = sideRefs.current.filter(Boolean);
 
-      gsap.set(containerEl, { opacity: 1, backgroundColor: "#EB4707" });
+      gsap.set(containerEl, { opacity: 1, backgroundColor: "#FFF6E7" });
       gsap.set(boxEl, {
         position: "fixed",
         left: window.innerWidth / 2,
@@ -87,7 +87,7 @@ export default function Preloader() {
           }
         )
         .to(heroImgEl, { opacity: 0, duration: 0.6, ease: "power1.inOut" }, "-=0.5")
-        .to(containerEl, { backgroundColor: "rgba(235,71,7,0)", duration: 0.6, ease: "power1.inOut" }, "-=0.5")
+        .to(containerEl, { backgroundColor: "rgba(255,246,231,0)", duration: 0.6, ease: "power1.inOut" }, "-=0.5")
         .to(containerEl, { opacity: 0, duration: 0.5, ease: "power1.in" }, "-=0.3");
 
       return () => tl.kill();
@@ -99,7 +99,7 @@ export default function Preloader() {
   if (hidden) return null;
 
   return (
-    <div ref={containerRef} className="fixed inset-0 z-[9999] bg-[#EB4707] overflow-hidden" aria-hidden>
+    <div ref={containerRef} className="fixed inset-0 z-[9999] bg-[#FFF6E7] overflow-hidden" aria-hidden>
       <div className="absolute inset-0 flex items-center justify-center">
         <div ref={boxRef} className="relative w-[140px] h-[140px] md:w-[180px] md:h-[200px]">
           <img ref={heroRef} src={heroSrc} alt="" className="absolute inset-0 w-full h-full object-cover z-20" />
