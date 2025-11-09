@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+dist/
+out/
+
+# Storybook (optional)
+.storybook/
+stories/
+
+# Environment
+.env*
+
+# OS / Editor
+.DS_Store
+*.log
+.vscode/
