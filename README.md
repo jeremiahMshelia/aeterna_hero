@@ -1,6 +1,6 @@
 # Aeterna — Brand Experience Site
 
-![Aeterna preview](public/aeterna-preview.gif)
+![Aeterna preview](public/AeternaPreview.gif)
 
 A preloader-driven hero experience powered by Next.js 15, Tailwind, and GSAP.
 
