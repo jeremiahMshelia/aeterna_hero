@@ -53,5 +53,3 @@ Released under the [Creative Commons Attribution–NonCommercial 4.0 License](./
 - Hero background: `public/hero_img/Aeterna_hero_img.webp`
 - Slideshow: `public/slideshow/1.webp` – `public/slideshow/9.webp`
 - Brand wordmark (logo): **Aeterna**
-
-> Want to show it off? Record a short screen capture of the preloader + hero sequence and drop a GIF in this README.
