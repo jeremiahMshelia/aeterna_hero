@@ -2,11 +2,11 @@
 
 ![Aeterna preview](public/aeterna-preview.gif)
 
-A preloader-driven hero experience powered by Next.js 15, Tailwind, and GSAP. Slides sweep in, zoom into position, and hand off to a fully responsive hero state.
+A preloader-driven hero experience powered by Next.js 15, Tailwind, and GSAP.
 
 ## ✨ Features
 
-- **GSAP preloader** with mirrored hero slideshow alignment and reduced-motion guardrails (coming soon).
+- **GSAP preloader** with mirrored hero slideshow alignment.
 - **Responsive layout** with tuned breakpoints for mobile/desktop hero geometry.
 - **Custom fonts & assets** wired via Tailwind CSS 4.
 - **Open-source ready**: CC BY-NC 4.0 license, contribution guidelines, and documentation.
