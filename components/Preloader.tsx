@@ -24,6 +24,24 @@ export default function Preloader() {
   const heroSrc = "/hero_img/Aeterna_hero_img.webp";
 
   useEffect(() => {
+    const updateViewportHeight = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      const vh = window.innerHeight;
+      el.style.setProperty("--preloader-vh", `${vh}px`);
+    };
+
+    updateViewportHeight();
+    window.addEventListener("resize", updateViewportHeight);
+    window.addEventListener("orientationchange", updateViewportHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateViewportHeight);
+      window.removeEventListener("orientationchange", updateViewportHeight);
+    };
+  }, []);
+
+  useEffect(() => {
     const containerEl = containerRef.current;
     const boxEl = boxRef.current;
     const heroImgEl = heroRef.current;
@@ -43,7 +61,12 @@ export default function Preloader() {
 
       const sideImages = sideRefs.current.filter(Boolean);
 
-      gsap.set(containerEl, { opacity: 1, backgroundColor: "#FFF6E7" });
+      gsap.set(containerEl, {
+        opacity: 1,
+        backgroundColor: "#FFF6E7",
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
       gsap.set(boxEl, {
         position: "fixed",
         left: window.innerWidth / 2,
@@ -99,7 +122,12 @@ export default function Preloader() {
   if (hidden) return null;
 
   return (
-    <div ref={containerRef} className="fixed inset-0 z-[9999] bg-[#FFF6E7] overflow-hidden" aria-hidden>
+    <div
+      ref={containerRef}
+      className="fixed inset-x-0 top-0 z-[9999] bg-[#FFF6E7] overflow-hidden"
+      style={{ height: "var(--preloader-vh, 100vh)" }}
+      aria-hidden
+    >
       <div className="absolute inset-0 flex items-center justify-center">
         <div ref={boxRef} className="relative w-[140px] h-[140px] md:w-[180px] md:h-[200px]">
           <img ref={heroRef} src={heroSrc} alt="" className="absolute inset-0 w-full h-full object-cover z-20" />

@@ -10,10 +10,10 @@ export default function Hero() {
   const posCenterDxVh = 3.7821; // ( -10 + (1519-1440)/2 ) / 780 * 100
   const posCenterDyVh = 11.4744; // ( -27 + (1013-780)/2 ) / 780 * 100
 
-  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = sectionRef.current;
+    const el = contentRef.current;
     if (!el) return;
     gsap.set(el, { opacity: 0 });
     const show = () => gsap.to(el, { opacity: 1, duration: 0.35, delay: 0.1, ease: "power2.out" });
@@ -28,7 +28,6 @@ export default function Hero() {
 
   return (
     <section
-      ref={sectionRef}
       id="hero"
       className="relative w-screen h-screen [--xshift:-3vh] md:[--xshift:0vh]"
       style={{
@@ -38,7 +37,7 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 px-3 md:px-8">
+      <div ref={contentRef} className="absolute inset-0 px-3 md:px-8">
         <div className="grid h-full grid-cols-12 grid-rows-12 gap-x-6 text-white md:text-black">
           <header className="col-span-12 flex items-center justify-between pt-6">
             <div className="font-boska font-medium leading-none text-[22px] md:text-[22px]">
