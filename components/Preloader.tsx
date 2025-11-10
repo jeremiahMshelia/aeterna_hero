@@ -29,6 +29,7 @@ export default function Preloader() {
       if (!el) return;
       const vh = window.innerHeight;
       el.style.setProperty("--preloader-vh", `${vh}px`);
+      document.documentElement.style.setProperty("--app-vh", `${vh}px`);
     };
 
     updateViewportHeight();
@@ -125,7 +126,10 @@ export default function Preloader() {
     <div
       ref={containerRef}
       className="fixed inset-0 z-[9999] bg-[#FFF6E7] overflow-hidden"
-      style={{ height: "var(--preloader-vh, 100dvh)", minHeight: "100dvh" }}
+      style={{
+        height: "var(--preloader-vh, var(--app-vh, 100dvh))",
+        minHeight: "var(--app-vh, 100dvh)",
+      }}
       aria-hidden
     >
       <div className="absolute inset-0 flex items-center justify-center">

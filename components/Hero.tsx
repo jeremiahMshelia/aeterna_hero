@@ -31,6 +31,8 @@ export default function Hero() {
       id="hero"
       className="relative w-screen h-screen [--xshift:-3vh] md:[--xshift:0vh]"
       style={{
+        height: "var(--app-vh, 100dvh)",
+        minHeight: "var(--app-vh, 100dvh)",
         backgroundImage: "url('/hero_img/Aeterna_hero_img.webp')",
         backgroundSize: `${bgWidthVh}vh ${bgHeightVh}vh`,
         backgroundPosition: `calc(50% + ${posCenterDxVh}vh + var(--xshift)) calc(50% + ${posCenterDyVh}vh)`,
