@@ -124,8 +124,8 @@ export default function Preloader() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-x-0 top-0 z-[9999] bg-[#FFF6E7] overflow-hidden"
-      style={{ height: "var(--preloader-vh, 100vh)" }}
+      className="fixed inset-0 z-[9999] bg-[#FFF6E7] overflow-hidden"
+      style={{ height: "var(--preloader-vh, 100dvh)", minHeight: "100dvh" }}
       aria-hidden
     >
       <div className="absolute inset-0 flex items-center justify-center">
